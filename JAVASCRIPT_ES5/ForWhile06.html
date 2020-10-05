@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForWhile06.html</title>
+</head>
+<script>
+    /*
+        자스 : script 태그 안에서 선언된 변수는 해당 페이지 모든 영역에서 사용가능하다
+        for (var 변수 =초기값; 반복조건; 증감식){
+            명령문
+        }
+    */
+    for(var i=0;i<5; i++){
+        var gVar = 'for문 안에서 선언된 변수 ';
+        document.write('i='+i+'<br/>');
+    }
+    document.write('for문이 끝난후 :i='+i+', gVar :'+gVar);
+</script>
+<body>
+    <script>
+         document.write('<br/> body 태그 안에서 사용 :i='+i+', gVar :'+gVar+'<br/>');
+         document.write('<h2>FOR문으로 출력</h2>')
+         for(var i=0; i<5; i++){
+             for(var k=0; k<5; k++){
+                 if( i == k){
+                     document.write('1');
+                 }
+                 else  
+                    document.write('0');
+             }
+             document.write('<br/>');
+         }
+         document.write('<h2>WHILE문으로 출력</h2>');
+         var table = "<table style=\"text-align :center;border-spacing:2px;background-color:red;width:200px\">";
+            i=k=0;
+            while(i<5){
+                table+="<tr style='background-color:white'>"
+                while(k<5){
+                    if(i==k)
+                        table+="<td style=\'background-color: green;\'>1</td>";
+                    else  
+                        table+="<td>0</td>";
+                    k++;
+                }
+                table+="</tr>";
+                k=0;
+                i++;
+            }
+
+         table+="</table>";
+         document.write(table);
+            
+         // table 태그를 사용하여 구구단 출력 
+        document.write('<h2>구구단 출력</h2>');
+
+        document.write( "<table style=\"text-align:center; border-spacing:2px; background-color:yellow\">");
+         for(i=1; i<=9; i++){
+             document.write("<tr style=\"background-color : white\">");
+            for(k=2;k<=9; k++){
+                document.write("<td>"+i*k+"</td>");
+            }
+            document.write("</tr>");
+         }
+         document.write('</table>');
+       
+    </script>
+</body>
+</html>
